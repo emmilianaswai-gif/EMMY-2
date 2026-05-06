@@ -1,0 +1,9 @@
+const res = await fetch("/api/sales");
+
+if (!res.ok) {
+  const text = await res.text();
+  console.error("API error:", text);
+  return;
+}
+
+const data = await res.json();
